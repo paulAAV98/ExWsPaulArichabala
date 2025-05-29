@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./Chat_front
+    ports:
+      - "4200:4200"  # Angular se servirá en el puerto 4200
+    command: npm start  # Solo si usas Angular CLI en modo desarrollo
+
+  backend:
+    build:
+      context: ./Chat_Backend
+    ports:
+      - "3000:3000"  # Node.js backend
+    volumes:
+      - ./Chat_Backend:/app
+    command: npm start
