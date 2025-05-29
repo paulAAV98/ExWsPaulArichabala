@@ -1,5 +1,4 @@
 version: "3.9"
-
 services:
   frontend:
     build:
@@ -14,5 +13,6 @@ services:
     ports:
       - "3000:3000"  # Node.js backend
     volumes:
-      - ./Chat_Backend:/app
+      - ./Chat_Backend:/app  # Volumen para desarrollo
     command: npm start
+
