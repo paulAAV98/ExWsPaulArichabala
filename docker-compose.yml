@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: ./Chat_front
+    ports:
+      - "8080:80"  # El frontend se sirve en el puerto 8080
+
+  backend:
+    build:
+      context: ./Chat_Backend
+    ports:
+      - "3000:3000"  # El backend se sirve en el puerto 3000
+    volumes:
+      - ./Backend:/app  # Volumen para desarrollo
+    command: npm start
